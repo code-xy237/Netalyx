@@ -1,0 +1,36 @@
+# ─────────────────────────────────────────────────
+# Netalyx PRO — Dépendances Python
+# ─────────────────────────────────────────────────
+
+# Interface graphique
+ttkbootstrap>=1.10.1
+Pillow>=10.0.0
+
+# Réseau
+scapy>=2.5.0
+requests>=2.31.0
+
+# Machine Learning
+scikit-learn>=1.4.0
+numpy>=1.26.0
+
+# PDF
+fpdf2>=2.7.0
+
+# Visualisation
+matplotlib>=3.8.0
+networkx>=3.2
+
+# Vocal
+SpeechRecognition>=3.10.0
+pyttsx3>=2.90
+
+# Web (serveur intégré)
+flask>=3.0.0
+flask-socketio>=5.3.0
+
+# Sécurité
+cryptography>=42.0.0
+
+# Base de données
+# (sqlite3 est inclus dans Python standard)

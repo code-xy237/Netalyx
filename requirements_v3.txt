@@ -1,0 +1,30 @@
+# requirements_v3.txt — Dépendances Netalyx v3.0 (voix + gestes + 3D)
+# Installer avec : pip install -r requirements_v3.txt
+
+# ── Core existant (inchangé) ──────────────────────────────────────────────────
+ttkbootstrap>=1.10.0
+networkx>=3.0
+matplotlib>=3.7
+scapy>=2.5
+scikit-learn>=1.3
+pillow>=10.0
+reportlab>=4.0
+requests>=2.31
+cryptography>=41.0
+
+# ── Phase 1 : Bridge WebSocket ────────────────────────────────────────────────
+websockets>=12.0          # Serveur WS async
+
+# ── Phase 2 : Voix ────────────────────────────────────────────────────────────
+SpeechRecognition>=3.10   # STT temps réel (Google + offline)
+pyttsx3>=2.90             # TTS offline (pas d'API requise)
+pyaudio>=0.2.13           # Accès microphone (requis par SpeechRecognition)
+# openai>=1.0             # Optionnel : Whisper API pour haute précision
+# faster-whisper>=0.10    # Optionnel : Whisper local ultra-rapide
+
+# ── Phase 3 : Gestes ─────────────────────────────────────────────────────────
+opencv-python>=4.8        # Capture webcam + traitement image
+mediapipe>=0.10           # Détection main + landmarks
+
+# ── Phase 5 : WebView 3D embarquée ───────────────────────────────────────────
+tkinterweb>=3.23          # Chromium/WebKit dans Tkinter (pour la vue 3D embarquée)

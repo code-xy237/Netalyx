@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- ── Identité du projet ────────────────────────────────────────────── -->
+  <groupId>boria</groupId>
+  <artifactId>boria-ai</artifactId>
+  <version>1.0.0</version>
+  <packaging>jar</packaging>
+
+  <name>BorIA — Intelligence Artificielle Java</name>
+  <description>
+    Application IA modulaire : NLP (OpenNLP), réseau de neurones (Encog),
+    chatbot AIML (Program AB), vision (OpenCV), interface JavaFX.
+  </description>
+
+  <!-- ── Propriétés ───────────────────────────────────────────────────── -->
+  <properties>
+    <java.version>17</java.version>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+    <!-- Versions des dépendances -->
+    <javafx.version>21.0.2</javafx.version>
+    <encog.version>3.4</encog.version>
+    <opennlp.version>2.3.1</opennlp.version>
+    <opencv.version>4.9.0-0</opencv.version>
+    <programab.version>0.0.4.3</programab.version>
+  </properties>
+
+  <!-- ── Dépendances ──────────────────────────────────────────────────── -->
+  <dependencies>
+
+    <!-- JavaFX — Interface graphique -->
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-controls</artifactId>
+      <version>${javafx.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-fxml</artifactId>
+      <version>${javafx.version}</version>
+    </dependency>
+
+    <!-- Encog — Réseau de neurones -->
+    <dependency>
+      <groupId>org.encog</groupId>
+      <artifactId>encog-core</artifactId>
+      <version>${encog.version}</version>
+    </dependency>
+
+    <!-- Apache OpenNLP — Traitement du langage naturel -->
+    <dependency>
+      <groupId>org.apache.opennlp</groupId>
+      <artifactId>opennlp-tools</artifactId>
+      <version>${opennlp.version}</version>
+    </dependency>
+
+    <!-- OpenCV — Vision par ordinateur -->
+    <!--
+      Note : OpenCV nécessite aussi les bibliothèques natives (.dll / .so / .dylib).
+      Téléchargez-les sur https://opencv.org/releases/ et ajoutez-les au classpath.
+    -->
+    <dependency>
+      <groupId>org.openpnp</groupId>
+      <artifactId>opencv</artifactId>
+      <version>${opencv.version}</version>
+    </dependency>
+
+    <!-- Program AB — Moteur AIML 2.0 -->
+    <!--
+      Program AB n'est pas sur Maven Central. Installez-le manuellement :
+        mvn install:install-file -Dfile=libs/programab.jar \
+          -DgroupId=org.alicebot.ab -DartifactId=programab \
+          -Dversion=0.0.4.3 -Dpackaging=jar
+    -->
+    <dependency>
+      <groupId>org.alicebot.ab</groupId>
+      <artifactId>programab</artifactId>
+      <version>${programab.version}</version>
+      <scope>system</scope>
+      <systemPath>${project.basedir}/libs/programab.jar</systemPath>
+    </dependency>
+
+    <!-- Tests -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>5.10.2</version>
+      <scope>test</scope>
+    </dependency>
+
+  </dependencies>
+
+  <!-- ── Build ────────────────────────────────────────────────────────── -->
+  <build>
+    <sourceDirectory>src/main/java</sourceDirectory>
+    <resources>
+      <resource>
+        <directory>resources</directory>
+      </resource>
+    </resources>
+
+    <plugins>
+
+      <!-- Compilateur Java -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.12.1</version>
+        <configuration>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+        </configuration>
+      </plugin>
+
+      <!-- Plugin JavaFX -->
+      <plugin>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-maven-plugin</artifactId>
+        <version>0.0.8</version>
+        <configuration>
+          <mainClass>boria.Main</mainClass>
+        </configuration>
+      </plugin>
+
+      <!-- JAR exécutable avec toutes les dépendances -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.5.2</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals><goal>shade</goal></goals>
+            <configuration>
+              <transformers>
+                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                  <mainClass>boria.Main</mainClass>
+                </transformer>
+              </transformers>
+              <filters>
+                <filter>
+                  <artifact>*:*</artifact>
+                  <excludes>
+                    <exclude>META-INF/*.SF</exclude>
+                    <exclude>META-INF/*.DSA</exclude>
+                    <exclude>META-INF/*.RSA</exclude>
+                  </excludes>
+                </filter>
+              </filters>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- Tests JUnit 5 -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.2.5</version>
+      </plugin>
+
+    </plugins>
+  </build>
+
+</project>

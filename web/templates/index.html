@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Netalyx — Dashboard Web</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg:       #0d0f14;
+    --surface:  #151820;
+    --border:   #1f2333;
+    --text:     #e2e8f0;
+    --muted:    #64748b;
+    --green:    #22c55e;
+    --orange:   #f97316;
+    --red:      #ef4444;
+    --blue:     #3b82f6;
+    --purple:   #a78bfa;
+    --cyan:     #06b6d4;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 14px; }
+
+  /* Header */
+  header { display: flex; align-items: center; justify-content: space-between;
+           padding: 12px 24px; background: var(--surface);
+           border-bottom: 1px solid var(--border); }
+  .logo  { font-size: 20px; font-weight: 700; color: var(--cyan); letter-spacing: 1px; }
+  .logo span { color: var(--muted); font-weight: 400; font-size: 13px; margin-left: 8px; }
+  #conn-badge { padding: 4px 12px; border-radius: 99px; font-size: 12px; font-weight: 600; }
+  .connected    { background: #14532d; color: var(--green); }
+  .disconnected { background: #450a0a; color: var(--red); }
+
+  /* Layout */
+  .main { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; padding: 16px; }
+  .full { grid-column: 1 / -1; }
+  .half { grid-column: span 2; }
+
+  /* Cards */
+  .card { background: var(--surface); border: 1px solid var(--border);
+          border-radius: 10px; overflow: hidden; }
+  .card-header { padding: 10px 16px; border-bottom: 1px solid var(--border);
+                 font-size: 12px; font-weight: 600; color: var(--muted);
+                 text-transform: uppercase; letter-spacing: .06em;
+                 display: flex; align-items: center; gap: 8px; }
+  .card-body   { padding: 12px 16px; }
+
+  /* KPI row */
+  .kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+             margin-bottom: 0; }
+  .kpi { background: var(--surface); border: 1px solid var(--border);
+         border-radius: 10px; padding: 16px 20px; }
+  .kpi-label { font-size: 11px; color: var(--muted); text-transform: uppercase;
+               letter-spacing: .06em; margin-bottom: 6px; }
+  .kpi-value { font-size: 28px; font-weight: 700; }
+  .kpi-value.green  { color: var(--green); }
+  .kpi-value.orange { color: var(--orange); }
+  .kpi-value.red    { color: var(--red); }
+  .kpi-value.blue   { color: var(--blue); }
+
+  /* Log tables */
+  .log-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .log-table th { padding: 6px 10px; text-align: left; color: var(--muted);
+                  font-weight: 600; border-bottom: 1px solid var(--border);
+                  font-size: 11px; text-transform: uppercase; }
+  .log-table td { padding: 5px 10px; border-bottom: 1px solid #1a1f2e; }
+  .log-table tr:last-child td { border-bottom: none; }
+  .log-table tbody tr:hover { background: #1a1f2e; }
+  .scroll-body { max-height: 240px; overflow-y: auto; }
+  .scroll-body::-webkit-scrollbar { width: 4px; }
+  .scroll-body::-webkit-scrollbar-track { background: transparent; }
+  .scroll-body::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+  /* Badges */
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 99px;
+           font-size: 11px; font-weight: 600; }
+  .badge-red    { background: #450a0a; color: var(--red); }
+  .badge-orange { background: #431407; color: var(--orange); }
+  .badge-green  { background: #14532d; color: var(--green); }
+  .badge-blue   { background: #1e3a5f; color: var(--blue); }
+  .badge-purple { background: #2e1065; color: var(--purple); }
+  .badge-gray   { background: #1f2333; color: var(--muted); }
+
+  /* Proto colors */
+  .proto-tcp  { color: var(--blue); font-weight: 600; }
+  .proto-udp  { color: var(--green); font-weight: 600; }
+  .proto-icmp { color: var(--orange); font-weight: 600; }
+
+  /* Status bar */
+  #status-bar { padding: 6px 24px; font-size: 11px; color: var(--muted);
+                background: var(--surface); border-top: 1px solid var(--border);
+                position: fixed; bottom: 0; left: 0; right: 0; }
+
+  /* Graph canvas */
+  #graph-canvas { width: 100%; height: 380px; background: #0a0c10;
+                  border-radius: 6px; display: block; }
+
+  /* ML bar */
+  .ml-mode { display: inline-flex; align-items: center; gap: 6px;
+             padding: 4px 12px; border-radius: 99px; font-size: 12px; font-weight: 600; }
+  .ml-idle      { background: #1f2333; color: var(--muted); }
+  .ml-training  { background: #431407; color: var(--orange); }
+  .ml-detecting { background: #14532d; color: var(--green); }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .main { grid-template-columns: 1fr; }
+    .half, .full { grid-column: 1; }
+    .kpi-row { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">NETALYX <span>Network Security Monitor — Dashboard Web</span></div>
+  <div style="display:flex;align-items:center;gap:12px;">
+    <span id="ml-badge" class="ml-mode ml-idle">● ML : EN ATTENTE</span>
+    <span id="conn-badge" class="disconnected">● Déconnecté</span>
+  </div>
+</header>
+
+<div style="padding:16px 16px 8px;">
+  <div class="kpi-row">
+    <div class="kpi"><div class="kpi-label">Paquets capturés</div>
+      <div class="kpi-value blue" id="kpi-packets">0</div></div>
+    <div class="kpi"><div class="kpi-label">Alertes IDS</div>
+      <div class="kpi-value orange" id="kpi-alerts">0</div></div>
+    <div class="kpi"><div class="kpi-label">Appareils détectés</div>
+      <div class="kpi-value green" id="kpi-devices">0</div></div>
+    <div class="kpi"><div class="kpi-label">Anomalies ML</div>
+      <div class="kpi-value red" id="kpi-ml-anom">0</div></div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- Graphique trafic temps réel -->
+  <div class="card half">
+    <div class="card-header">📈 Trafic réseau (paquets/s)</div>
+    <div class="card-body">
+      <canvas id="traffic-chart" height="120"></canvas>
+    </div>
+  </div>
+
+  <!-- Alertes IDS -->
+  <div class="card">
+    <div class="card-header">🚨 Alertes IDS (temps réel)</div>
+    <div class="card-body" style="padding:0;">
+      <div class="scroll-body">
+        <table class="log-table">
+          <thead><tr><th>Heure</th><th>Type</th><th>Source</th></tr></thead>
+          <tbody id="alerts-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trafic réseau log -->
+  <div class="card half">
+    <div class="card-header">📡 Trafic réseau (derniers paquets)</div>
+    <div class="card-body" style="padding:0;">
+      <div class="scroll-body">
+        <table class="log-table">
+          <thead><tr><th>Heure</th><th>Src</th><th>Dst</th><th>Proto</th><th>Port</th></tr></thead>
+          <tbody id="packets-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Appareils détectés -->
+  <div class="card">
+    <div class="card-header">💻 Appareils détectés</div>
+    <div class="card-body" style="padding:0;">
+      <div class="scroll-body">
+        <table class="log-table">
+          <thead><tr><th>IP</th><th>Hostname</th><th>Ports</th></tr></thead>
+          <tbody id="devices-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cartographie réseau (graphe D3/Canvas) -->
+  <div class="card full">
+    <div class="card-header">🕸 Cartographie réseau (mise à jour toutes les 3s)
+      <span id="graph-stats" style="margin-left:auto;font-weight:400;color:var(--muted)"></span>
+    </div>
+    <div class="card-body" style="padding:8px;">
+      <canvas id="graph-canvas"></canvas>
+    </div>
+  </div>
+
+  <!-- Stats ML -->
+  <div class="card">
+    <div class="card-header">🧬 ML IDS — Statistiques</div>
+    <div class="card-body">
+      <table class="log-table">
+        <tbody id="ml-stats-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<div id="status-bar">Netalyx Web Dashboard — Connecté au serveur local</div>
+<div style="height:32px;"></div><!-- espace status bar -->
+
+<script>
+// ── Socket.IO ──────────────────────────────────────────────────────────────
+const socket = io();
+const badge  = document.getElementById('conn-badge');
+
+socket.on('connect', () => {
+  badge.textContent = '● Connecté';
+  badge.className   = 'connected';
+});
+socket.on('disconnect', () => {
+  badge.textContent = '● Déconnecté';
+  badge.className   = 'disconnected';
+});
+
+// ── KPI counters ───────────────────────────────────────────────────────────
+let kpi = { packets: 0, alerts: 0, devices: 0, ml_anom: 0 };
+
+function updateKPI() {
+  document.getElementById('kpi-packets').textContent = kpi.packets.toLocaleString();
+  document.getElementById('kpi-alerts').textContent  = kpi.alerts.toLocaleString();
+  document.getElementById('kpi-devices').textContent = kpi.devices.toLocaleString();
+  document.getElementById('kpi-ml-anom').textContent = kpi.ml_anom.toLocaleString();
+}
+
+// ── Graphique trafic ───────────────────────────────────────────────────────
+const trafficCtx = document.getElementById('traffic-chart').getContext('2d');
+const trafficData = { labels: [], datasets: [{
+  label: 'Paquets/s',
+  data: [],
+  borderColor: '#3b82f6',
+  backgroundColor: 'rgba(59,130,246,0.1)',
+  borderWidth: 2,
+  pointRadius: 0,
+  fill: true,
+  tension: 0.4
+}]};
+const trafficChart = new Chart(trafficCtx, {
+  type: 'line',
+  data: trafficData,
+  options: {
+    responsive: true,
+    animation: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { display: false },
+      y: { ticks: { color: '#64748b', font: { size: 10 } },
+           grid: { color: '#1f2333' } }
+    }
+  }
+});
+
+let pktCounter = 0;
+setInterval(() => {
+  const now = new Date().toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+  trafficData.labels.push(now);
+  trafficData.datasets[0].data.push(pktCounter);
+  pktCounter = 0;
+  if (trafficData.labels.length > 60) {
+    trafficData.labels.shift();
+    trafficData.datasets[0].data.shift();
+  }
+  trafficChart.update('none');
+}, 1000);
+
+// ── Helpers DOM ───────────────────────────────────────────────────────────
+function prependRow(tbodyId, cells, maxRows = 60) {
+  const tbody = document.getElementById(tbodyId);
+  const tr    = document.createElement('tr');
+  tr.innerHTML = cells;
+  tbody.insertBefore(tr, tbody.firstChild);
+  while (tbody.rows.length > maxRows) tbody.deleteRow(tbody.rows.length - 1);
+}
+
+function alertBadge(kind) {
+  if (['CRITICAL_INCIDENT','ANOMALY_DETECTED','IP_BLOCKED'].includes(kind))
+    return `<span class="badge badge-red">${kind}</span>`;
+  if (['HIGH_PACKET_RATE','SYN_SCAN'].includes(kind))
+    return `<span class="badge badge-orange">${kind}</span>`;
+  if (kind === 'ML_MODEL_READY')
+    return `<span class="badge badge-green">${kind}</span>`;
+  return `<span class="badge badge-gray">${kind}</span>`;
+}
+
+function protoClass(p) {
+  if (p === 'TCP')  return 'proto-tcp';
+  if (p === 'UDP')  return 'proto-udp';
+  if (p === 'ICMP') return 'proto-icmp';
+  return '';
+}
+
+// ── Events Socket.IO ───────────────────────────────────────────────────────
+socket.on('snapshot', data => {
+  kpi.packets = data.stats.packets_total;
+  kpi.alerts  = data.stats.alerts_total;
+  kpi.devices = data.stats.devices_total;
+  updateKPI();
+  (data.alerts || []).forEach(a => renderAlert(a));
+  (data.packets || []).forEach(p => renderPacket(p));
+  (data.devices || []).forEach(d => renderDevice(d));
+  if (data.ml) renderMLStats(data.ml);
+  if (data.graph) renderGraph(data.graph);
+});
+
+socket.on('packet', p => {
+  pktCounter++;
+  kpi.packets++;
+  updateKPI();
+  renderPacket(p);
+});
+
+socket.on('alert', a => {
+  kpi.alerts++;
+  if (a.kind === 'ANOMALY_DETECTED') kpi.ml_anom++;
+  updateKPI();
+  renderAlert(a);
+  if (a.critical) flashStatus(`🚨 ${a.kind} — src: ${a.src}`);
+});
+
+socket.on('device', d => {
+  kpi.devices++;
+  updateKPI();
+  renderDevice(d);
+});
+
+socket.on('ml_update', stats => renderMLStats(stats));
+socket.on('graph_update', g => renderGraph(g));
+
+// ── Rendus ─────────────────────────────────────────────────────────────────
+function renderAlert(a) {
+  prependRow('alerts-body',
+    `<td>${a.time}</td><td>${alertBadge(a.kind)}</td><td style="color:#94a3b8">${a.src}</td>`);
+}
+
+function renderPacket(p) {
+  const port = p.dport ? `:${p.dport}` : '';
+  prependRow('packets-body',
+    `<td>${p.time}</td>
+     <td style="color:#94a3b8">${p.src}</td>
+     <td style="color:#94a3b8">${p.dst}</td>
+     <td><span class="${protoClass(p.proto)}">${p.proto}</span></td>
+     <td style="color:#64748b">${port}</td>`);
+}
+
+function renderDevice(d) {
+  const ports = (d.open_ports || []).slice(0, 5).join(', ');
+  const tbody = document.getElementById('devices-body');
+  // Éviter les doublons
+  for (let r of tbody.rows) {
+    if (r.cells[0] && r.cells[0].textContent === d.ip) return;
+  }
+  prependRow('devices-body',
+    `<td style="color:var(--cyan)">${d.ip}</td>
+     <td style="color:#94a3b8">${d.hostname}</td>
+     <td style="color:#64748b;font-size:11px">${ports}</td>`);
+}
+
+function renderMLStats(stats) {
+  const modeMap = {
+    idle:      ['ml-idle',      '● ML : EN ATTENTE'],
+    training:  ['ml-training',  '● ML : APPRENTISSAGE'],
+    detecting: ['ml-detecting', '● ML : DÉTECTION ACTIVE'],
+  };
+  const [cls, label] = modeMap[stats.mode] || ['ml-idle', '● ML : ?'];
+  const mlBadge = document.getElementById('ml-badge');
+  mlBadge.className   = `ml-mode ${cls}`;
+  mlBadge.textContent = label;
+
+  const rows = [
+    ['Mode',             stats.mode || '—'],
+    ['Paquets analysés', (stats.total_seen || 0).toLocaleString()],
+    ['Anomalies',        (stats.total_anomaly || 0).toLocaleString()],
+    ["Taux d'anomalie",  `${stats.anomaly_rate || 0} %`],
+    ['Modèle sur disque', stats.model_on_disk ? '✓ Oui' : '✗ Non'],
+  ];
+  document.getElementById('ml-stats-body').innerHTML = rows
+    .map(([k, v]) => `<tr><td style="color:var(--muted)">${k}</td><td style="font-weight:600">${v}</td></tr>`)
+    .join('');
+}
+
+// ── Cartographie réseau (canvas 2D maison) ─────────────────────────────────
+const GC = document.getElementById('graph-canvas');
+const gctx = GC.getContext('2d');
+let graphData = { nodes: [], edges: [] };
+let nodePositions = {};
+
+function resizeCanvas() {
+  GC.width  = GC.offsetWidth;
+  GC.height = GC.offsetHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', () => { resizeCanvas(); renderGraph(graphData); });
+
+function initPositions(nodes) {
+  const W = GC.width, H = GC.height;
+  const existing = new Set(Object.keys(nodePositions));
+  nodes.forEach((n, i) => {
+    if (!nodePositions[n.id]) {
+      const angle = (i / nodes.length) * 2 * Math.PI;
+      const r     = Math.min(W, H) * 0.35;
+      nodePositions[n.id] = {
+        x: W / 2 + r * Math.cos(angle) + (Math.random() - 0.5) * 60,
+        y: H / 2 + r * Math.sin(angle) + (Math.random() - 0.5) * 60,
+      };
+    }
+  });
+  // Nettoyer les nœuds disparus
+  const current = new Set(nodes.map(n => n.id));
+  for (const id of existing) {
+    if (!current.has(id)) delete nodePositions[id];
+  }
+}
+
+function renderGraph(data) {
+  graphData = data;
+  const W = GC.width, H = GC.height;
+  gctx.clearRect(0, 0, W, H);
+  gctx.fillStyle = '#0a0c10';
+  gctx.fillRect(0, 0, W, H);
+
+  if (!data.nodes || !data.nodes.length) {
+    gctx.fillStyle = '#334155';
+    gctx.font = '14px Segoe UI';
+    gctx.textAlign = 'center';
+    gctx.fillText('En attente de trafic réseau…', W / 2, H / 2);
+    return;
+  }
+
+  initPositions(data.nodes);
+
+  // Arêtes
+  data.edges.forEach(e => {
+    const sp = nodePositions[e.src];
+    const dp = nodePositions[e.dst];
+    if (!sp || !dp) return;
+    gctx.beginPath();
+    gctx.moveTo(sp.x, sp.y);
+    gctx.lineTo(dp.x, dp.y);
+    const proto = e.proto || '?';
+    gctx.strokeStyle = proto === 'TCP' ? '#3b82f6' :
+                       proto === 'UDP' ? '#22c55e' :
+                       proto === 'ICMP' ? '#f97316' : '#64748b';
+    gctx.lineWidth = Math.min(1 + Math.log10(e.weight + 1), 3);
+    gctx.globalAlpha = 0.45;
+    gctx.stroke();
+    gctx.globalAlpha = 1;
+    // Flèche
+    const angle = Math.atan2(dp.y - sp.y, dp.x - sp.x);
+    const mx = (sp.x + dp.x) / 2, my = (sp.y + dp.y) / 2;
+    gctx.beginPath();
+    gctx.moveTo(mx, my);
+    gctx.lineTo(mx - 8 * Math.cos(angle - 0.4), my - 8 * Math.sin(angle - 0.4));
+    gctx.lineTo(mx - 8 * Math.cos(angle + 0.4), my - 8 * Math.sin(angle + 0.4));
+    gctx.closePath();
+    gctx.fillStyle = '#64748b';
+    gctx.fill();
+  });
+
+  // Nœuds
+  const volMap = {};
+  data.nodes.forEach(n => { volMap[n.id] = n.volume || 1; });
+  const maxVol = Math.max(...Object.values(volMap), 1);
+
+  data.nodes.forEach(n => {
+    const pos = nodePositions[n.id];
+    if (!pos) return;
+    const r = 6 + 16 * (n.volume / maxVol);
+    // Cercle
+    gctx.beginPath();
+    gctx.arc(pos.x, pos.y, r, 0, 2 * Math.PI);
+    gctx.fillStyle = n.color || '#4CAF50';
+    gctx.globalAlpha = 0.88;
+    gctx.fill();
+    gctx.globalAlpha = 1;
+    // Contour
+    gctx.strokeStyle = 'rgba(255,255,255,0.2)';
+    gctx.lineWidth = 1;
+    gctx.stroke();
+    // Label IP (derniers 2 octets)
+    const parts = n.id.split('.');
+    const label = parts.length === 4 ? parts.slice(2).join('.') : n.id;
+    gctx.fillStyle = '#e2e8f0';
+    gctx.font = `bold ${Math.max(9, Math.min(11, r))}px Consolas`;
+    gctx.textAlign = 'center';
+    gctx.fillText(label, pos.x, pos.y + r + 12);
+  });
+
+  // Stats
+  document.getElementById('graph-stats').textContent =
+    `${data.nodes.length} nœuds · ${data.edges.length} connexions`;
+}
+
+// ── Status bar flash ───────────────────────────────────────────────────────
+function flashStatus(msg) {
+  const bar = document.getElementById('status-bar');
+  bar.style.color = '#ef4444';
+  bar.textContent = msg;
+  setTimeout(() => {
+    bar.style.color = '';
+    bar.textContent = 'Netalyx Web Dashboard — Connecté au serveur local';
+  }, 4000);
+}
+
+// Rafraîchissement ML stats toutes les 3s via REST
+setInterval(() => {
+  fetch('/api/ml').then(r => r.json()).then(renderMLStats).catch(() => {});
+}, 3000);
+</script>
+</body>
+</html>

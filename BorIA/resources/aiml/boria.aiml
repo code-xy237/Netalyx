@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+  <!-- ── Salutations ─────────────────────────────────────────────────── -->
+  <category>
+    <pattern>BONJOUR</pattern>
+    <template>Bonjour ! Je suis BorIA, votre assistant IA développé en Java. Comment puis-je vous aider aujourd'hui ?</template>
+  </category>
+
+  <category>
+    <pattern>SALUT</pattern>
+    <template>Salut ! Ravi de vous parler. Que voulez-vous faire ?</template>
+  </category>
+
+  <category>
+    <pattern>HELLO</pattern>
+    <template>Hello! I'm BorIA. How can I assist you today?</template>
+  </category>
+
+  <category>
+    <pattern>HI</pattern>
+    <template>Hi there! I'm BorIA, your Java AI assistant.</template>
+  </category>
+
+  <!-- ── Identité ────────────────────────────────────────────────────── -->
+  <category>
+    <pattern>QUI ES TU</pattern>
+    <template>Je suis BorIA, une intelligence artificielle développée en Java. Je combine le traitement du langage naturel (NLP), les réseaux de neurones via Encog, et la vision par ordinateur via OpenCV.</template>
+  </category>
+
+  <category>
+    <pattern>QUI EST BORIA</pattern>
+    <template>BorIA est une application IA modulaire construite en Java. Son architecture inclut un moteur central, un module NLP (OpenNLP), un réseau de neurones (Encog), un chatbot AIML et un module de vision (OpenCV).</template>
+  </category>
+
+  <category>
+    <pattern>QUEL EST TON NOM</pattern>
+    <template>Je m'appelle BorIA. Mon nom vient de "Bot IA" — un assistant intelligent développé en Java.</template>
+  </category>
+
+  <!-- ── Capacités ───────────────────────────────────────────────────── -->
+  <category>
+    <pattern>AIDE</pattern>
+    <template>
+      Voici ce que je peux faire :
+      1. Répondre à vos questions (je suis là !)
+      2. Analyser des images (cliquez sur le bouton 📷 Image)
+      3. Démontrer les prédictions XOR du réseau de neurones (bouton ⚡ XOR)
+      4. Traiter du texte avec le NLP (Apache OpenNLP)
+      Que souhaitez-vous essayer ?
+    </template>
+  </category>
+
+  <category>
+    <pattern>HELP</pattern>
+    <template>
+      Here is what I can do:
+      1. Answer your questions
+      2. Analyze images (click the 📷 Image button)
+      3. Demonstrate XOR neural network predictions (⚡ XOR button)
+      4. Process text with NLP
+      What would you like to try?
+    </template>
+  </category>
+
+  <category>
+    <pattern>QUE PEUX TU FAIRE</pattern>
+    <template>Je peux discuter avec vous, analyser des images avec OpenCV, faire des prédictions avec un réseau de neurones Encog, et traiter du texte avec OpenNLP. Tapez AIDE pour plus de détails.</template>
+  </category>
+
+  <!-- ── Réseau de neurones ──────────────────────────────────────────── -->
+  <category>
+    <pattern>XOR</pattern>
+    <template>Le XOR (OU exclusif) est un problème classique d'apprentissage automatique. Mon réseau de neurones (architecture 2-3-1, Resilient Propagation) l'a appris en quelques milliers d'itérations. Cliquez sur ⚡ XOR pour voir une démonstration !</template>
+  </category>
+
+  <category>
+    <pattern>RESEAU DE NEURONES</pattern>
+    <template>Mon réseau de neurones utilise la bibliothèque Encog. L'architecture est : 2 neurones d'entrée → 3 neurones cachés (sigmoïde) → 1 neurone de sortie (sigmoïde). Il est entraîné avec l'algorithme Resilient Propagation (RPROP).</template>
+  </category>
+
+  <category>
+    <pattern>ENCOG</pattern>
+    <template>Encog est une bibliothèque Java de machine learning développée par Jeff Heaton. Elle supporte les réseaux de neurones, les algorithmes génétiques, et bien plus. J'utilise Encog pour mon réseau de neurones multicouche.</template>
+  </category>
+
+  <!-- ── NLP ─────────────────────────────────────────────────────────── -->
+  <category>
+    <pattern>NLP</pattern>
+    <template>Le NLP (Natural Language Processing) me permet d'analyser votre texte : détection de phrases, tokenisation, et normalisation. J'utilise Apache OpenNLP pour ces traitements.</template>
+  </category>
+
+  <category>
+    <pattern>OPENNLP</pattern>
+    <template>Apache OpenNLP est une bibliothèque Java de traitement du langage naturel. Je l'utilise pour détecter les phrases et tokeniser vos entrées avant de générer une réponse.</template>
+  </category>
+
+  <!-- ── Vision ──────────────────────────────────────────────────────── -->
+  <category>
+    <pattern>VISION</pattern>
+    <template>Mon module de vision utilise OpenCV, la bibliothèque de vision par ordinateur la plus populaire au monde. Je peux charger une image, la convertir en niveaux de gris, et analyser ses propriétés. Cliquez sur 📷 Image pour l'essayer !</template>
+  </category>
+
+  <category>
+    <pattern>OPENCV</pattern>
+    <template>OpenCV (Open Source Computer Vision) est une bibliothèque C++ avec des bindings Java. Je l'utilise pour traiter les images : chargement, conversion, détection. Les bibliothèques natives doivent être installées sur votre système.</template>
+  </category>
+
+  <!-- ── Politesse ───────────────────────────────────────────────────── -->
+  <category>
+    <pattern>MERCI</pattern>
+    <template>De rien ! C'est avec plaisir que je vous aide. N'hésitez pas si vous avez d'autres questions.</template>
+  </category>
+
+  <category>
+    <pattern>THANK YOU</pattern>
+    <template>You're welcome! Feel free to ask if you need anything else.</template>
+  </category>
+
+  <category>
+    <pattern>AU REVOIR</pattern>
+    <template>Au revoir ! À bientôt. L'application continuera de tourner en arrière-plan.</template>
+  </category>
+
+  <category>
+    <pattern>BYE</pattern>
+    <template>Goodbye! See you next time.</template>
+  </category>
+
+  <!-- ── Technologie ─────────────────────────────────────────────────── -->
+  <category>
+    <pattern>JAVA</pattern>
+    <template>Je suis entièrement développé en Java ! Mon architecture utilise JavaFX pour l'interface, Encog pour les réseaux de neurones, OpenNLP pour le NLP, OpenCV pour la vision, et AIML pour le chatbot.</template>
+  </category>
+
+  <category>
+    <pattern>JAVAFX</pattern>
+    <template>JavaFX est le framework GUI que j'utilise pour mon interface graphique. Il offre des composants modernes, des animations fluides et une architecture MVC propre.</template>
+  </category>
+
+  <!-- ── Wildcard générique ──────────────────────────────────────────── -->
+  <category>
+    <pattern>_ BORIA _</pattern>
+    <template>Vous me parlez ! Je suis BorIA et je suis à votre écoute. Pouvez-vous préciser votre demande ?</template>
+  </category>
+
+  <category>
+    <pattern>*</pattern>
+    <template>Je ne suis pas sûr de comprendre "<star/>". Essayez de taper AIDE pour voir ce que je peux faire, ou reformulez votre question.</template>
+  </category>
+
+</aiml>

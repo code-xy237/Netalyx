@@ -1,0 +1,37 @@
+{
+  "ip_range": "192.168.1.0/24",
+  "port_scan_list": [21, 22, 23, 25, 53, 67, 68, 69, 80, 110, 123, 135, 137, 139, 143, 161, 389, 443, 445, 587, 631, 993, 995, 1433, 1521, 2049, 2181, 2375, 27017, 3306, 3389, 5432, 5900, 6379, 8080, 8081, 9000],
+  "ids": {
+    "packet_rate_threshold": 200,
+    "syn_scan_threshold": 40,
+    "port_probe_threshold": 20,
+    "burst_window_seconds": 15,
+    "alert_cooldown_seconds": 30
+  },
+  "logging": {
+    "alerts_log": "logs/alerts.log",
+    "traffic_log": "logs/traffic.log",
+    "devices_log": "logs/devices.log",
+    "incidents_log": "logs/incidents.log"
+  },
+  "notifications": {
+    "email_enabled": false,
+    "email_smtp": "smtp.gmail.com",
+    "email_port": 587,
+    "email_user": "",
+    "email_password": "",
+    "email_to": "",
+    "telegram_enabled": false,
+    "telegram_token": "",
+    "telegram_chat_id": ""
+  },
+  "threat_intel": {
+    "abuseipdb_key": "",
+    "virustotal_key": "",
+    "enabled": false
+  },
+  "firewall": {
+    "auto_block": false,
+    "block_duration_minutes": 60
+  }
+}

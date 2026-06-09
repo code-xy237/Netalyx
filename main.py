@@ -195,9 +195,18 @@ def launch_app():
         frames[name].pack(fill="both", expand=True)
 
     def on_login(username):
-        dash = Dashboard(container, username=username)
-        frames["dashboard"] = dash
-        show("dashboard")
+        try:
+            dash = Dashboard(container, username=username)
+            frames["dashboard"] = dash
+            show("dashboard")
+        except Exception as e:
+            import traceback
+            traceback.print_exc()
+            messagebox.showerror(
+                "Erreur de démarrage",
+                f"Impossible de charger le dashboard :\n\n{e}\n\n"
+                "Consultez la console pour le détail complet."
+            )
 
     frames["signup"] = SignupFrame(container, on_success=lambda: show("login"))
     frames["login"]  = LoginFrame(container, on_success=on_login,

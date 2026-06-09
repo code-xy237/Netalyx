@@ -128,20 +128,26 @@ class LoginFrame(tk.Frame):
         username = self.user_var.get().strip()
         password = self.pass_var.get()
         if not username or not password:
-            messagebox.showwarning("Champs vides", "Veuillez remplir tous les champs.")
+            messagebox.showwarning("Champs vides", "Veuillez remplir tous les champs.", parent=self)
             return
         if not authenticate_user(username, password):
-            messagebox.showerror("Échec", "Identifiant ou mot de passe incorrect.")
+            messagebox.showerror("Échec", "Identifiant ou mot de passe incorrect.", parent=self)
             return
         code = send_otp(username)
         if code:
-            messagebox.showinfo("Code OTP", f"Votre code : {code}\n(Configurez email/Telegram pour l'envoi automatique)")
+            messagebox.showinfo("Code OTP",
+                f"Votre code : {code}\n(Configurez email/Telegram pour l'envoi automatique)",
+                parent=self)
         else:
-            messagebox.showinfo("OTP", "Code envoyé par email / Telegram.")
-        entered = simpledialog.askstring("Vérification OTP", "Code à 6 chiffres :")
+            messagebox.showinfo("OTP", "Code envoyé par email / Telegram.", parent=self)
+
+        # parent=self garantit que la dialog est bien rattachée à la fenêtre principale
+        entered = simpledialog.askstring("Vérification OTP", "Code à 6 chiffres :", parent=self)
         if not entered:
             return
         if verify_otp(username, entered.strip()):
-            self.on_success(username)
+            # after() permet à Tkinter de fermer proprement la dialog OTP
+            # avant de construire et afficher le Dashboard
+            self.after(50, lambda: self.on_success(username))
         else:
-            messagebox.showerror("OTP invalide", "Code incorrect ou expiré.")
+            messagebox.showerror("OTP invalide", "Code incorrect ou expiré.", parent=self)

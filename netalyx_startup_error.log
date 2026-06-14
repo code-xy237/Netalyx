@@ -1,0 +1,41 @@
+[2026-06-14 20:21:41] Entrée main — cwd=E:\Cle JB Link\Netalyx\NETALYX argv=['E:\\Cle JB Link\\Netalyx\\NETALYX\\main.py']
+[2026-06-14 20:21:41] Mode développement sans droits admin — poursuite sans relance UAC
+[2026-06-14 20:21:55] Imports lourds: début
+[2026-06-14 20:21:55] _do_imports: tkinter début
+[2026-06-14 20:21:55] _do_imports: tkinter OK
+[2026-06-14 20:21:55] _do_imports: PIL début
+[2026-06-14 20:21:56] _do_imports: PIL OK
+[2026-06-14 20:21:56] _do_imports: ttkbootstrap début
+[2026-06-14 20:21:56] _do_imports: ttkbootstrap OK
+[2026-06-14 20:21:56] _do_imports: auth.utils début
+[2026-06-14 20:21:56] _do_imports: auth.utils OK
+[2026-06-14 20:21:56] _do_imports: common début
+[2026-06-14 20:21:56] _do_imports: common OK
+[2026-06-14 20:21:56] Imports lourds: OK
+[2026-06-14 20:21:56] Splash: début
+[2026-06-14 20:22:08] launch_app: début
+[2026-06-14 20:22:08] launch_app: imports tkinter/ttkbootstrap OK
+[2026-06-14 20:22:08] launch_app: imports auth/common OK
+[2026-06-14 20:24:42] Entrée main — cwd=E:\Cle JB Link\Netalyx\NETALYX argv=['E:\\Cle JB Link\\Netalyx\\NETALYX\\main.py']
+[2026-06-14 20:24:42] Mode développement sans droits admin — poursuite sans relance UAC
+[2026-06-14 21:11:30] Entrée main — cwd=E:\Cle JB Link\Netalyx\NETALYX argv=['E:\\Cle JB Link\\Netalyx\\NETALYX\\main.py']
+[2026-06-14 21:11:30] Mode développement sans droits admin — poursuite sans relance UAC
+[2026-06-14 21:11:35] Imports lourds: début
+[2026-06-14 21:11:35] _do_imports: tkinter début
+[2026-06-14 21:11:35] _do_imports: tkinter OK
+[2026-06-14 21:11:35] _do_imports: PIL début
+[2026-06-14 21:11:40] _do_imports: PIL OK
+[2026-06-14 21:11:40] _do_imports: ttkbootstrap début
+[2026-06-14 21:11:43] _do_imports: ttkbootstrap OK
+[2026-06-14 21:11:43] _do_imports: auth.utils début
+[2026-06-14 21:11:45] _do_imports: auth.utils OK
+[2026-06-14 21:11:45] _do_imports: common début
+[2026-06-14 21:11:45] _do_imports: common OK
+[2026-06-14 21:11:45] Imports lourds: OK
+[2026-06-14 21:11:45] Splash: début
+[2026-06-14 21:11:53] launch_app: début
+[2026-06-14 21:11:53] launch_app: imports tkinter/ttkbootstrap OK
+[2026-06-14 21:11:53] launch_app: imports auth/common OK
+[2026-06-14 21:12:42] launch_app: import gui.dashboard OK
+[2026-06-14 21:12:42] launch_app: base de données OK
+[2026-06-14 21:12:44] launch_app: interface login affichée

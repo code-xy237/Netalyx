@@ -314,3 +314,207 @@
 {"time": "2026-06-09T01:15:38.849205", "kind": "PORT_PROBING", "detail": {"src": "192.168.152.248", "distinct_ports": 41}}
 {"time": "2026-06-09T01:15:49.180043", "kind": "PORT_PROBING", "detail": {"src": "192.168.152.236", "distinct_ports": 72}}
 {"time": "2026-06-09T01:15:49.180714", "kind": "PORT_PROBING", "detail": {"src": "192.168.152.236", "distinct_ports": 72}}
+{"time": "2026-06-14T20:20:32.217191", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 20}}
+{"time": "2026-06-14T20:20:32.243602", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 20}}
+{"time": "2026-06-14T20:20:32.248615", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 20}}
+{"time": "2026-06-14T20:20:32.249082", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 20}}
+{"time": "2026-06-14T20:20:33.513168", "kind": "SYN_SCAN", "detail": {"src": "10.134.223.248", "syn_count": 48}}
+{"time": "2026-06-14T20:20:33.514221", "kind": "SYN_SCAN", "detail": {"src": "10.134.223.248", "syn_count": 48}}
+{"time": "2026-06-14T20:21:02.765185", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 41}}
+{"time": "2026-06-14T20:21:02.766199", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 41}}
+{"time": "2026-06-14T20:21:33.409231", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 41}}
+{"time": "2026-06-14T20:21:33.409769", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 41}}
+{"time": "2026-06-14T20:22:03.821654", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 41}}
+{"time": "2026-06-14T20:22:03.822983", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 41}}
+{"time": "2026-06-14T20:22:06.633654", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 89}}
+{"time": "2026-06-14T20:22:06.634263", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 89}}
+{"time": "2026-06-14T20:22:16.113028", "kind": "SYN_SCAN", "detail": {"src": "10.134.223.248", "syn_count": 47}}
+{"time": "2026-06-14T20:22:16.113739", "kind": "SYN_SCAN", "detail": {"src": "10.134.223.248", "syn_count": 47}}
+{"time": "2026-06-14T20:22:34.309166", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:22:34.311832", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:22:40.962664", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 105}}
+{"time": "2026-06-14T20:22:40.963407", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 105}}
+{"time": "2026-06-14T20:22:59.580043", "kind": "SYN_SCAN", "detail": {"src": "10.134.223.248", "syn_count": 40}}
+{"time": "2026-06-14T20:22:59.581066", "kind": "SYN_SCAN", "detail": {"src": "10.134.223.248", "syn_count": 40}}
+{"time": "2026-06-14T20:23:04.823282", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:23:04.824295", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:23:34.952672", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:23:34.957955", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:24:05.038340", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:24:05.038927", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:24:14.701028", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 109}}
+{"time": "2026-06-14T20:24:14.701791", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 109}}
+{"time": "2026-06-14T20:24:35.272214", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:24:35.273028", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:25:05.579253", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:25:05.580786", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:25:08.351463", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 111}}
+{"time": "2026-06-14T20:25:08.352431", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 111}}
+{"time": "2026-06-14T20:25:35.792943", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:25:35.794112", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:25:40.682569", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 115}}
+{"time": "2026-06-14T20:25:40.683541", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 115}}
+{"time": "2026-06-14T20:25:41.336030", "kind": "SYN_SCAN", "detail": {"src": "10.134.223.248", "syn_count": 41}}
+{"time": "2026-06-14T20:25:41.336735", "kind": "SYN_SCAN", "detail": {"src": "10.134.223.248", "syn_count": 41}}
+{"time": "2026-06-14T20:26:05.978551", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:26:05.979552", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:26:36.062052", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:26:36.063010", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:27:05.895927", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 117}}
+{"time": "2026-06-14T20:27:05.896473", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 117}}
+{"time": "2026-06-14T20:27:06.509938", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:27:06.510561", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:27:13.470069", "kind": "SYN_SCAN", "detail": {"src": "10.134.223.248", "syn_count": 43}}
+{"time": "2026-06-14T20:27:13.470934", "kind": "SYN_SCAN", "detail": {"src": "10.134.223.248", "syn_count": 43}}
+{"time": "2026-06-14T20:27:37.256608", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:27:37.257261", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:27:53.961302", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 123}}
+{"time": "2026-06-14T20:27:53.963285", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 123}}
+{"time": "2026-06-14T20:27:55.391538", "kind": "SYN_SCAN", "detail": {"src": "10.134.223.248", "syn_count": 41}}
+{"time": "2026-06-14T20:27:55.401912", "kind": "SYN_SCAN", "detail": {"src": "10.134.223.248", "syn_count": 41}}
+{"time": "2026-06-14T20:28:08.243548", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:28:08.244139", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:28:24.434978", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 130}}
+{"time": "2026-06-14T20:28:24.435584", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 130}}
+{"time": "2026-06-14T20:28:38.572949", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:28:38.573412", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:28:58.670928", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 133}}
+{"time": "2026-06-14T20:28:58.671489", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 133}}
+{"time": "2026-06-14T20:29:08.719699", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:29:08.720239", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:29:18.296766", "kind": "SYN_SCAN", "detail": {"src": "10.134.223.248", "syn_count": 57}}
+{"time": "2026-06-14T20:29:18.297619", "kind": "SYN_SCAN", "detail": {"src": "10.134.223.248", "syn_count": 57}}
+{"time": "2026-06-14T20:29:27.131832", "kind": "HIGH_PACKET_RATE", "detail": {"src": "10.134.223.248", "rate_window_s": 15, "count": 200}}
+{"time": "2026-06-14T20:29:27.132428", "kind": "HIGH_PACKET_RATE", "detail": {"src": "10.134.223.248", "rate_window_s": 15, "count": 200}}
+{"time": "2026-06-14T20:29:27.137854", "kind": "CRITICAL_INCIDENT", "detail": {"src": "10.134.223.248", "alert_types": ["PORT_PROBING", "HIGH_PACKET_RATE", "SYN_SCAN"], "count": 7}}
+{"time": "2026-06-14T20:29:27.138515", "kind": "CRITICAL_INCIDENT", "detail": {"src": "10.134.223.248", "alert_types": ["PORT_PROBING", "HIGH_PACKET_RATE", "SYN_SCAN"], "count": 7}}
+{"time": "2026-06-14T20:29:31.091815", "kind": "HIGH_PACKET_RATE", "detail": {"src": "2.17.161.59", "rate_window_s": 15, "count": 200}}
+{"time": "2026-06-14T20:29:31.092333", "kind": "HIGH_PACKET_RATE", "detail": {"src": "2.17.161.59", "rate_window_s": 15, "count": 200}}
+{"time": "2026-06-14T20:29:34.885633", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 139}}
+{"time": "2026-06-14T20:29:34.886577", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 139}}
+{"time": "2026-06-14T20:29:39.000165", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:29:39.000723", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:30:10.515366", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:30:10.515920", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:30:10.521999", "kind": "CRITICAL_INCIDENT", "detail": {"src": "10.134.223.248", "alert_types": ["PORT_PROBING", "HIGH_PACKET_RATE", "SYN_SCAN"], "count": 6}}
+{"time": "2026-06-14T20:30:10.522655", "kind": "CRITICAL_INCIDENT", "detail": {"src": "10.134.223.248", "alert_types": ["PORT_PROBING", "HIGH_PACKET_RATE", "SYN_SCAN"], "count": 6}}
+{"time": "2026-06-14T20:30:11.644506", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 142}}
+{"time": "2026-06-14T20:30:11.645463", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 142}}
+{"time": "2026-06-14T20:30:40.604730", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:30:40.605210", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:30:40.613280", "kind": "CRITICAL_INCIDENT", "detail": {"src": "10.134.223.248", "alert_types": ["PORT_PROBING", "HIGH_PACKET_RATE", "SYN_SCAN"], "count": 6}}
+{"time": "2026-06-14T20:30:40.613932", "kind": "CRITICAL_INCIDENT", "detail": {"src": "10.134.223.248", "alert_types": ["PORT_PROBING", "HIGH_PACKET_RATE", "SYN_SCAN"], "count": 6}}
+{"time": "2026-06-14T20:31:11.259778", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:31:11.260985", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:31:11.278054", "kind": "CRITICAL_INCIDENT", "detail": {"src": "10.134.223.248", "alert_types": ["SYN_SCAN", "HIGH_PACKET_RATE", "PORT_PROBING"], "count": 6}}
+{"time": "2026-06-14T20:31:11.279349", "kind": "CRITICAL_INCIDENT", "detail": {"src": "10.134.223.248", "alert_types": ["SYN_SCAN", "HIGH_PACKET_RATE", "PORT_PROBING"], "count": 6}}
+{"time": "2026-06-14T20:31:41.573258", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:31:41.574503", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:32:11.697904", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:32:11.717257", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:32:41.790909", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:32:41.792298", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:32:59.665456", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 144}}
+{"time": "2026-06-14T20:32:59.666409", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 144}}
+{"time": "2026-06-14T20:33:12.078862", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:33:12.080001", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:33:42.182833", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:33:42.183825", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:34:12.710741", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:34:12.711507", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:34:14.812614", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 146}}
+{"time": "2026-06-14T20:34:14.813428", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 146}}
+{"time": "2026-06-14T20:34:44.134053", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:34:44.135150", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:35:14.651665", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:35:14.673939", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:35:14.688657", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 148}}
+{"time": "2026-06-14T20:35:14.689929", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 148}}
+{"time": "2026-06-14T20:35:44.894049", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:35:44.895951", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:36:15.325996", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:36:15.326633", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:36:15.336058", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 150}}
+{"time": "2026-06-14T20:36:15.336777", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 150}}
+{"time": "2026-06-14T20:36:46.073813", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:36:46.074334", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:37:16.824422", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:37:16.825466", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:37:23.253916", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 151}}
+{"time": "2026-06-14T20:37:23.254836", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 151}}
+{"time": "2026-06-14T20:37:28.349382", "kind": "SYN_SCAN", "detail": {"src": "10.134.223.248", "syn_count": 52}}
+{"time": "2026-06-14T20:37:28.350336", "kind": "SYN_SCAN", "detail": {"src": "10.134.223.248", "syn_count": 52}}
+{"time": "2026-06-14T20:37:47.283887", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:37:47.295518", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:37:54.397522", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 154}}
+{"time": "2026-06-14T20:37:54.398682", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 154}}
+{"time": "2026-06-14T20:38:17.803765", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:38:17.804749", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:38:24.832617", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 155}}
+{"time": "2026-06-14T20:38:24.833199", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 155}}
+{"time": "2026-06-14T20:38:32.370401", "kind": "SYN_SCAN", "detail": {"src": "10.134.223.248", "syn_count": 66}}
+{"time": "2026-06-14T20:38:32.370854", "kind": "SYN_SCAN", "detail": {"src": "10.134.223.248", "syn_count": 66}}
+{"time": "2026-06-14T20:38:45.173206", "kind": "HIGH_PACKET_RATE", "detail": {"src": "10.134.223.248", "rate_window_s": 15, "count": 200}}
+{"time": "2026-06-14T20:38:45.173795", "kind": "HIGH_PACKET_RATE", "detail": {"src": "10.134.223.248", "rate_window_s": 15, "count": 200}}
+{"time": "2026-06-14T20:38:45.187857", "kind": "CRITICAL_INCIDENT", "detail": {"src": "10.134.223.248", "alert_types": ["PORT_PROBING", "HIGH_PACKET_RATE", "SYN_SCAN"], "count": 7}}
+{"time": "2026-06-14T20:38:45.188620", "kind": "CRITICAL_INCIDENT", "detail": {"src": "10.134.223.248", "alert_types": ["PORT_PROBING", "HIGH_PACKET_RATE", "SYN_SCAN"], "count": 7}}
+{"time": "2026-06-14T20:38:48.391563", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:38:48.393130", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:38:57.549539", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 180}}
+{"time": "2026-06-14T20:38:57.551692", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 180}}
+{"time": "2026-06-14T20:39:18.590490", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:39:18.591607", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:39:18.615749", "kind": "CRITICAL_INCIDENT", "detail": {"src": "10.134.223.248", "alert_types": ["SYN_SCAN", "HIGH_PACKET_RATE", "PORT_PROBING"], "count": 7}}
+{"time": "2026-06-14T20:39:18.617105", "kind": "CRITICAL_INCIDENT", "detail": {"src": "10.134.223.248", "alert_types": ["SYN_SCAN", "HIGH_PACKET_RATE", "PORT_PROBING"], "count": 7}}
+{"time": "2026-06-14T20:39:27.637865", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 183}}
+{"time": "2026-06-14T20:39:27.638547", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 183}}
+{"time": "2026-06-14T20:39:27.647818", "kind": "SYN_SCAN", "detail": {"src": "10.134.223.248", "syn_count": 107}}
+{"time": "2026-06-14T20:39:27.648515", "kind": "SYN_SCAN", "detail": {"src": "10.134.223.248", "syn_count": 107}}
+{"time": "2026-06-14T20:39:36.566473", "kind": "HIGH_PACKET_RATE", "detail": {"src": "10.134.223.248", "rate_window_s": 15, "count": 200}}
+{"time": "2026-06-14T20:39:36.567372", "kind": "HIGH_PACKET_RATE", "detail": {"src": "10.134.223.248", "rate_window_s": 15, "count": 200}}
+{"time": "2026-06-14T20:39:39.635919", "kind": "HIGH_PACKET_RATE", "detail": {"src": "185.199.109.215", "rate_window_s": 15, "count": 200}}
+{"time": "2026-06-14T20:39:39.638160", "kind": "HIGH_PACKET_RATE", "detail": {"src": "185.199.109.215", "rate_window_s": 15, "count": 200}}
+{"time": "2026-06-14T20:39:50.966507", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:39:50.991321", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:39:51.026984", "kind": "CRITICAL_INCIDENT", "detail": {"src": "10.134.223.248", "alert_types": ["PORT_PROBING", "HIGH_PACKET_RATE", "SYN_SCAN"], "count": 8}}
+{"time": "2026-06-14T20:39:51.030173", "kind": "CRITICAL_INCIDENT", "detail": {"src": "10.134.223.248", "alert_types": ["PORT_PROBING", "HIGH_PACKET_RATE", "SYN_SCAN"], "count": 8}}
+{"time": "2026-06-14T20:40:03.294404", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 199}}
+{"time": "2026-06-14T20:40:03.296912", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 199}}
+{"time": "2026-06-14T20:40:03.345475", "kind": "SYN_SCAN", "detail": {"src": "10.134.223.248", "syn_count": 300}}
+{"time": "2026-06-14T20:40:03.349055", "kind": "SYN_SCAN", "detail": {"src": "10.134.223.248", "syn_count": 300}}
+{"time": "2026-06-14T20:40:08.986194", "kind": "HIGH_PACKET_RATE", "detail": {"src": "10.134.223.248", "rate_window_s": 15, "count": 463}}
+{"time": "2026-06-14T20:40:08.986813", "kind": "HIGH_PACKET_RATE", "detail": {"src": "10.134.223.248", "rate_window_s": 15, "count": 463}}
+{"time": "2026-06-14T20:40:09.006998", "kind": "HIGH_PACKET_RATE", "detail": {"src": "140.82.114.22", "rate_window_s": 15, "count": 200}}
+{"time": "2026-06-14T20:40:09.007612", "kind": "HIGH_PACKET_RATE", "detail": {"src": "140.82.114.22", "rate_window_s": 15, "count": 200}}
+{"time": "2026-06-14T20:40:22.315584", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:40:22.316151", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:40:22.324930", "kind": "CRITICAL_INCIDENT", "detail": {"src": "10.134.223.248", "alert_types": ["SYN_SCAN", "HIGH_PACKET_RATE", "PORT_PROBING"], "count": 10}}
+{"time": "2026-06-14T20:40:22.325621", "kind": "CRITICAL_INCIDENT", "detail": {"src": "10.134.223.248", "alert_types": ["SYN_SCAN", "HIGH_PACKET_RATE", "PORT_PROBING"], "count": 10}}
+{"time": "2026-06-14T20:40:53.303566", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:40:53.304128", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:40:53.313952", "kind": "CRITICAL_INCIDENT", "detail": {"src": "10.134.223.248", "alert_types": ["PORT_PROBING", "HIGH_PACKET_RATE", "SYN_SCAN"], "count": 8}}
+{"time": "2026-06-14T20:40:53.314646", "kind": "CRITICAL_INCIDENT", "detail": {"src": "10.134.223.248", "alert_types": ["PORT_PROBING", "HIGH_PACKET_RATE", "SYN_SCAN"], "count": 8}}
+{"time": "2026-06-14T20:41:24.313986", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:41:24.315173", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:41:24.342519", "kind": "CRITICAL_INCIDENT", "detail": {"src": "10.134.223.248", "alert_types": ["SYN_SCAN", "HIGH_PACKET_RATE", "PORT_PROBING"], "count": 8}}
+{"time": "2026-06-14T20:41:24.343816", "kind": "CRITICAL_INCIDENT", "detail": {"src": "10.134.223.248", "alert_types": ["SYN_SCAN", "HIGH_PACKET_RATE", "PORT_PROBING"], "count": 8}}
+{"time": "2026-06-14T20:41:35.449520", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 204}}
+{"time": "2026-06-14T20:41:35.450488", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 204}}
+{"time": "2026-06-14T20:41:55.434601", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:41:55.435134", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:41:55.445471", "kind": "CRITICAL_INCIDENT", "detail": {"src": "10.134.223.248", "alert_types": ["SYN_SCAN", "HIGH_PACKET_RATE", "PORT_PROBING"], "count": 6}}
+{"time": "2026-06-14T20:41:55.446011", "kind": "CRITICAL_INCIDENT", "detail": {"src": "10.134.223.248", "alert_types": ["SYN_SCAN", "HIGH_PACKET_RATE", "PORT_PROBING"], "count": 6}}
+{"time": "2026-06-14T20:42:26.290690", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:42:26.295710", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 42}}
+{"time": "2026-06-14T20:42:32.476897", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 207}}
+{"time": "2026-06-14T20:42:32.477517", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.105", "distinct_ports": 207}}
+{"time": "2026-06-14T20:42:40.718147", "kind": "SYN_SCAN", "detail": {"src": "10.134.223.248", "syn_count": 109}}
+{"time": "2026-06-14T20:42:40.719747", "kind": "SYN_SCAN", "detail": {"src": "10.134.223.248", "syn_count": 109}}
+{"time": "2026-06-14T20:42:43.592463", "kind": "HIGH_PACKET_RATE", "detail": {"src": "57.144.39.32", "rate_window_s": 15, "count": 200}}
+{"time": "2026-06-14T20:42:43.593171", "kind": "HIGH_PACKET_RATE", "detail": {"src": "57.144.39.32", "rate_window_s": 15, "count": 200}}
+{"time": "2026-06-14T20:42:43.638873", "kind": "HIGH_PACKET_RATE", "detail": {"src": "10.134.223.248", "rate_window_s": 15, "count": 200}}
+{"time": "2026-06-14T20:42:43.644081", "kind": "HIGH_PACKET_RATE", "detail": {"src": "10.134.223.248", "rate_window_s": 15, "count": 200}}
+{"time": "2026-06-14T20:42:43.671219", "kind": "CRITICAL_INCIDENT", "detail": {"src": "10.134.223.248", "alert_types": ["PORT_PROBING", "HIGH_PACKET_RATE", "SYN_SCAN"], "count": 6}}
+{"time": "2026-06-14T20:42:43.671863", "kind": "CRITICAL_INCIDENT", "detail": {"src": "10.134.223.248", "alert_types": ["PORT_PROBING", "HIGH_PACKET_RATE", "SYN_SCAN"], "count": 6}}
+{"time": "2026-06-14T20:42:58.230484", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 43}}
+{"time": "2026-06-14T20:42:58.231229", "kind": "PORT_PROBING", "detail": {"src": "10.134.223.248", "distinct_ports": 43}}

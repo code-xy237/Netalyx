@@ -8,3 +8,13 @@
 {"ip": "255.255.255.255", "mac": "ff:ff:ff:ff:ff:ff", "hostname": "Inconnu", "open_ports": [], "time": 1780967515.5522692}
 {"ip": "192.168.152.236", "mac": "fe:18:c1:3e:92:68", "hostname": "Inconnu", "open_ports": [53], "time": 1780967534.8779695}
 {"ip": "224.0.0.251", "mac": "01:00:5e:00:00:fb", "hostname": "mdns.mcast.net", "open_ports": [], "time": 1780967535.0465906}
+{"ip": "239.255.102.18", "mac": "01:00:5e:7f:66:12", "hostname": "Inconnu", "open_ports": [], "time": 1781468355.3092468}
+{"ip": "255.255.255.255", "mac": "ff:ff:ff:ff:ff:ff", "hostname": "Inconnu", "open_ports": [], "time": 1781468356.6124086}
+{"ip": "224.0.0.251", "mac": "01:00:5e:00:00:fb", "hostname": "mdns.mcast.net", "open_ports": [], "time": 1781468361.361929}
+{"ip": "224.0.0.252", "mac": "01:00:5e:00:00:fc", "hostname": "Inconnu", "open_ports": [], "time": 1781468366.1074839}
+{"ip": "172.19.239.255", "mac": "ff:ff:ff:ff:ff:ff", "hostname": "Inconnu", "open_ports": [], "time": 1781468371.0289388}
+{"ip": "224.0.0.22", "mac": "01:00:5e:00:00:16", "hostname": "igmp.mcast.net", "open_ports": [], "time": 1781468375.767255}
+{"ip": "239.255.255.250", "mac": "01:00:5e:7f:ff:fa", "hostname": "Inconnu", "open_ports": [], "time": 1781468380.5825286}
+{"ip": "172.30.63.255", "mac": "ff:ff:ff:ff:ff:ff", "hostname": "Inconnu", "open_ports": [], "time": 1781468385.5478046}
+{"ip": "10.134.223.255", "mac": "ff:ff:ff:ff:ff:ff", "hostname": "Inconnu", "open_ports": [], "time": 1781468390.2775106}
+{"ip": "10.134.223.105", "mac": "fe:18:c1:3e:92:68", "hostname": "Inconnu", "open_ports": [53], "time": 1781468409.6876872}
